@@ -1,24 +1,4 @@
-"""Settings placeholder.
-
-Purpose:
-    Reserve application configuration settings.
-
-TODO:
-    Add configuration loading when backend implementation begins.
-"""
-"""Application configuration.
-
-Purpose:
-    Load environment-based configuration for the Guardian Pipeline backend.
-    Currently exposes only what the Database Foundation phase (1.1) needs:
-    the database connection string.
-
-Usage:
-    from backend.core.config import get_settings
-
-    settings = get_settings()
-    settings.DATABASE_URL
-"""
+"""Application configuration for Guardian Pipeline."""
 
 import os
 from functools import lru_cache
@@ -29,12 +9,7 @@ load_dotenv()
 
 
 class Settings:
-    """Holds process configuration read from environment variables.
-
-    Kept as a plain class (not a framework-specific settings base) so this
-    module has no dependency beyond python-dotenv, which is already in
-    requirements.txt.
-    """
+    """Holds process configuration read from environment variables."""
 
     def __init__(self) -> None:
         database_url = os.getenv("DATABASE_URL")
@@ -48,10 +23,5 @@ class Settings:
 
 @lru_cache
 def get_settings() -> Settings:
-    """Return a cached Settings instance.
-
-    lru_cache ensures the environment is read once per process rather than
-    on every call, while still allowing modules to import and call this
-    function independently.
-    """
+    """Return a cached Settings instance."""
     return Settings()

@@ -1,4 +1,4 @@
-# Environments
+﻿# Environments
 .env
 .venv
 env/
@@ -19,3 +19,5 @@ uploads/
 logs/
 .vscode/
 .idea/
+backend/uploads/
+backend/logs/

@@ -1,56 +1,30 @@
-"""Resume model placeholder.
+"""Resume database model."""
 
-Purpose:
-    Reserve persistence models for resume records.
-
-TODO:
-    Define resume database models when persistence implementation begins.
-"""
-"""
-Resume database model.
-
-Purpose:
-Represents a resume uploaded by the user.
-
-A Resume only stores information about the uploaded file.
-Processing status and AI results are stored separately.
-"""
-
+from datetime import UTC, datetime
 from uuid import uuid4
-from datetime import datetime, UTC
-from sqlalchemy import Column, String, DateTime
+
+from sqlalchemy import Column, DateTime, String
 from sqlalchemy.orm import relationship
 
 from backend.database.base import Base
 
 
 class Resume(Base):
+    """Represents a resume uploaded by the user."""
+
     __tablename__ = "resumes"
 
-    id = Column(
-        String,
-        primary_key=True,
-        default=lambda: datetime.now(UTC)
-    )
-
-    filename = Column(
-        String,
-        nullable=False
-    )
-
-    storage_path = Column(
-        String,
-        nullable=False
-    )
-
+    id = Column(String, primary_key=True, default=lambda: str(uuid4()))
+    filename = Column(String, nullable=False)
+    storage_path = Column(String, nullable=False)
     uploaded_at = Column(
         DateTime,
-        default=datetime.utcnow,
-        nullable=False
+        default=lambda: datetime.now(UTC),
+        nullable=False,
     )
 
     jobs = relationship(
         "Job",
         back_populates="resume",
-        cascade="all, delete-orphan"
+        cascade="all, delete-orphan",
     )

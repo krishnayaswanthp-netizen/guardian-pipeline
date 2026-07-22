@@ -1,20 +1,13 @@
-"""Result schema placeholder.
-
-Purpose:
-    Reserve validation schemas for screening results.
-
-TODO:
-    Define result schemas when API contracts are designed.
-"""
-"""
-Pydantic schemas for Result.
-"""
+"""Pydantic schemas for Result."""
 
 from datetime import datetime
+
 from pydantic import BaseModel
 
 
 class ResultResponse(BaseModel):
+    """Response schema for screening results."""
+
     id: str
     job_id: str
     score: float

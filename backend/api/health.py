@@ -1,4 +1,4 @@
-"""Health API placeholder.
+﻿"""Health API placeholder.
 
 Purpose:
     Reserve routes for future service health checks.

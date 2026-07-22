@@ -1,4 +1,4 @@
-# Guardian Pipeline
+﻿# Guardian Pipeline
 
 ## Project Overview
 
@@ -12,15 +12,15 @@ This repository currently contains only the project structure and placeholders f
 backend/
   ai/
   api/
-  config/
+  core/
   database/
   logs/
   models/
+  queue/
   relay/
   schemas/
   services/
   uploads/
-  utils/
   worker/
 frontend/
 docs/

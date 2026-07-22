@@ -1,20 +1,13 @@
-"""Resume schema placeholder.
-
-Purpose:
-    Reserve validation schemas for resume payloads.
-
-TODO:
-    Define resume schemas when API contracts are designed.
-"""
-"""
-Pydantic schemas for Resume.
-"""
+"""Pydantic schemas for Resume."""
 
 from datetime import datetime
+
 from pydantic import BaseModel
 
 
 class ResumeResponse(BaseModel):
+    """Response schema for resume records."""
+
     id: str
     filename: str
     storage_path: str

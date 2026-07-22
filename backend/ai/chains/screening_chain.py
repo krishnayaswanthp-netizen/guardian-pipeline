@@ -1,10 +1,10 @@
-import os
+﻿import os
 
 from dotenv import load_dotenv
 from langchain_core.output_parsers import JsonOutputParser, StrOutputParser
 from langchain_groq import ChatGroq
 
-from prompts.templates import extraction_prompt, scoring_prompt
+from backend.ai.prompts.templates import extraction_prompt, scoring_prompt
 
 load_dotenv()
 

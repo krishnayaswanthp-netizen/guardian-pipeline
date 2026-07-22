@@ -1,20 +1,13 @@
-"""Job schema placeholder.
-
-Purpose:
-    Reserve validation schemas for job payloads.
-
-TODO:
-    Define job schemas when API contracts are designed.
-"""
-"""
-Pydantic schemas for Job.
-"""
+"""Pydantic schemas for Job."""
 
 from datetime import datetime
+
 from pydantic import BaseModel
 
 
 class JobResponse(BaseModel):
+    """Response schema for job records."""
+
     id: str
     resume_id: str
     status: str
